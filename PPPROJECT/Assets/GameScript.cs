@@ -22,6 +22,8 @@ public class GameScript : MonoBehaviour
 	public float startTime;
 	public float totalDistanceToDestination;
 
+	public List<GameObject> gameList;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -53,10 +55,12 @@ public class GameScript : MonoBehaviour
 
 		int n = itemData.Count;
 		positions = new List<Vector3> ();
+		gameList = new List<GameObject> ();
 
 		for (int i = 0; i < n; i++) {
 			s = GameObject.CreatePrimitive (PrimitiveType.Sphere);
 			s.transform.position = new Vector3 ((Random.value * 10) - 5, (Random.value * 10) - 5, 0F);
+
 			//s.name = "item" + itemData[i]["id"] + ":" +itemData[i]["first_name"];
 			s.name = itemData[i][1] + " ";
 			Debug.Log (s.name);
@@ -65,18 +69,47 @@ public class GameScript : MonoBehaviour
 				Debug.Log (itemData [i].Count);
 				for (int j = 0; j < itemData [i].Count; j++) {
 					GameObject childSphere = GameObject.CreatePrimitive (PrimitiveType.Sphere);
-					childSphere.transform.position = s.transform.position;
+
+					childSphere.transform.parent = s.transform;
+
+					//SphereCollider childSphere = s.AddComponent(typeof(SphereCollider) )  as SphereCollider;
+
+					//childSphere.transform.position = s.transform.position;
 					
 					positions.Add (new Vector3 (Random.value * 2, Random.value * 2, Random.value * 2));
 				}
+			}
+			gameList.Add (s);
+			Debug.Log ("counting children");
+
+			foreach (GameObject game in gameList) {
+				List<GameObject> children = lerpChildren (game.transform);
+
+				Debug.Log (children.Count);
 			}
 
 			//use Coroutine instead of Update() to schedule movement
 
 		}
 		//StartCoroutine (MultipleLerp (1, positions));
+
+
+		//for each gameObject in gameList, get all children, and make each child move
+
+
 	}
 
+	List<GameObject> lerpChildren(Transform parent){
+		List<GameObject> children = new List<GameObject> ();
+
+//		foreach (Transform child in parent) {
+//			
+//			children.Add (childSphere);
+//
+//		}
+		return children;
+
+	}
 
 	IEnumerator MultipleLerp (float speed, List<Vector3> positions) {
 		foreach (Vector3 position in positions) {
@@ -97,6 +130,7 @@ public class GameScript : MonoBehaviour
 	// Update is called once per frame
 	void Update (){
 		if(Input.GetKeyDown("space")){
+			Debug.Log ("pressing space");
 			MultipleLerp (1, positions);
 		}
 		
