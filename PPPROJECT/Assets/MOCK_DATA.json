@@ -1,4 +1,6 @@
-[{"id":1,"first_name":"Jimmy","last_name":"Nelson","email":"jnelson0@blogger.com","gender":"Male","ip_address":"125.143.181.143","SSN":"829-32-3430"},
+{
+"table1":[
+{"id":1,"first_name":"Jimmy","last_name":"Nelson","email":"jnelson0@blogger.com","gender":"Male","ip_address":"125.143.181.143","SSN":"829-32-3430"},
 {"id":2,"first_name":"Robin","last_name":"Baker","email":"rbaker1@tamu.edu","gender":"Female","ip_address":"28.245.164.149","SSN":"333-73-7356"},
 {"id":3,"first_name":"Tammy","last_name":"Vasquez","email":"tvasquez2@miibeian.gov.cn","gender":"Female","ip_address":"158.219.195.214","SSN":"792-81-6476"},
 {"id":4,"first_name":"Christina","last_name":"Oliver","email":"coliver3@si.edu","gender":"Female","ip_address":"15.88.125.135","SSN":"923-08-6790"},
@@ -6,7 +8,9 @@
 {"id":6,"first_name":"Betty","last_name":"Hicks","email":"bhicks5@house.gov","gender":"Female","ip_address":"129.151.210.238","SSN":"641-47-2199"},
 {"id":7,"first_name":"Benjamin","last_name":"Morgan","email":"bmorgan6@google.com.au","gender":"Male","ip_address":"52.85.242.146","SSN":"697-59-4930"},
 {"id":8,"first_name":"Joshua","last_name":"Young","email":"jyoung7@icq.com","gender":"Male","ip_address":"74.73.107.180","SSN":"381-00-9441"},
-{"id":9,"first_name":"Keith","last_name":"Wood","email":"kwood8@netscape.com","gender":"Male","ip_address":"18.5.217.153","SSN":"672-83-1718"},
+{"id":9,"first_name":"Keith","last_name":"Wood","email":"kwood8@netscape.com","gender":"Male","ip_address":"18.5.217.153","SSN":"672-83-1718"}
+],
+"table2":[
 {"id":10,"first_name":"Douglas","last_name":"Howard","email":"dhoward9@google.ca","gender":"Male","ip_address":"246.92.231.35","SSN":"176-94-4924"},
 {"id":11,"first_name":"Jose","last_name":"Fernandez","email":"jfernandeza@addthis.com","gender":"Male","ip_address":"126.160.190.186","SSN":"922-95-9264"},
 {"id":12,"first_name":"Paul","last_name":"Watson","email":"pwatsonb@cnet.com","gender":"Male","ip_address":"233.100.75.99","SSN":"447-87-9930"},
@@ -17,4 +21,6 @@
 {"id":17,"first_name":"Kathleen","last_name":"Carroll","email":"kcarrollg@flavors.me","gender":"Female","ip_address":"237.71.137.186","SSN":"412-42-4981"},
 {"id":18,"first_name":"Julia","last_name":"Gilbert","email":"jgilberth@over-blog.com","gender":"Female","ip_address":"106.67.144.13","SSN":"404-07-7895"},
 {"id":19,"first_name":"Christopher","last_name":"Castillo","email":"ccastilloi@seattletimes.com","gender":"Male","ip_address":"85.118.6.51","SSN":"465-02-0941"},
-{"id":20,"first_name":"Ann","last_name":"Lewis","email":"alewisj@earthlink.net","gender":"Female","ip_address":"123.229.155.201","SSN":"743-35-0308"}]
+{"id":20,"first_name":"Ann","last_name":"Lewis","email":"alewisj@earthlink.net","gender":"Female","ip_address":"123.229.155.201","SSN":"743-35-0308"}
+]
+}
