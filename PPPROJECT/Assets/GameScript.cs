@@ -18,7 +18,7 @@ public class GameScript : MonoBehaviour
 
 	public Transform startPosition;
 	public Transform endPosition;
-	public List<Vector3> positions;
+
 	public float startTime;
 	public float totalDistanceToDestination;
 
@@ -48,16 +48,17 @@ public class GameScript : MonoBehaviour
 //		dbConn.Close();
 
 		//Read data from json file
-		jsonString = File.ReadAllText (Application.dataPath + "/MOCK_DATA.json");
+		jsonString = File.ReadAllText (Application.dataPath + "/data_out_2.json");
 		Debug.Log (jsonString);
 
 		itemData = JsonMapper.ToObject (jsonString);
 
 		int n = itemData.Count;
-		positions = new List<Vector3> ();
+//		positions = new List<Vector3> ();
 		gameList = new List<GameObject> ();
 
 		for (int i = 0; i < n; i++) {
+//			s = GameObject.Instantiate (Resources.Load ("Table")) as GameObject;
 			s = GameObject.CreatePrimitive (PrimitiveType.Sphere);
 			s.transform.position = new Vector3 ((Random.value * 10) - 5, (Random.value * 10) - 5, 0F);
 
@@ -68,7 +69,7 @@ public class GameScript : MonoBehaviour
 			if (itemData [i].Count > 0) {
 				Debug.Log (itemData [i].Count);
 				for (int j = 0; j < itemData [i].Count; j++) {
-					GameObject childSphere = GameObject.CreatePrimitive (PrimitiveType.Sphere);
+					GameObject childSphere = GameObject.Instantiate (Resources.Load ("Table")) as GameObject;
 
 					childSphere.transform.parent = s.transform;
 
@@ -76,17 +77,17 @@ public class GameScript : MonoBehaviour
 
 					//childSphere.transform.position = s.transform.position;
 					
-					positions.Add (new Vector3 (Random.value * 2, Random.value * 2, Random.value * 2));
+
 				}
 			}
 			gameList.Add (s);
 			Debug.Log ("counting children");
 
-			foreach (GameObject game in gameList) {
-				List<GameObject> children = lerpChildren (game.transform);
-
-				Debug.Log (children.Count);
-			}
+//			foreach (GameObject game in gameList) {
+//				List<GameObject> children = lerpChildren (game.transform);
+//
+//				Debug.Log (children.Count);
+//			}
 
 			//use Coroutine instead of Update() to schedule movement
 
@@ -99,39 +100,39 @@ public class GameScript : MonoBehaviour
 
 	}
 
-	List<GameObject> lerpChildren(Transform parent){
-		List<GameObject> children = new List<GameObject> ();
-
-//		foreach (Transform child in parent) {
-//			
-//			children.Add (childSphere);
+//	List<GameObject> lerpChildren(Transform parent){
+//		List<GameObject> children = new List<GameObject> ();
 //
+////		foreach (Transform child in parent) {
+////			
+////			children.Add (childSphere);
+////
+////		}
+//		return children;
+//
+//	}
+
+//	IEnumerator MultipleLerp (float speed, List<Vector3> positions) {
+//		foreach (Vector3 position in positions) {
+//			Vector3 startPos = transform.position;
+//			float timer = 0f;
+//			while (timer <= 1f) {
+//				timer += Time.deltaTime * speed;
+//				Vector3 newPosition = Vector3.Lerp (startPos, position, timer);
+//				transform.position = newPosition;
+//				yield return new WaitForEndOfFrame ();
+//			}
+//			transform.position = position;
+//			startPos = position;
 //		}
-		return children;
-
-	}
-
-	IEnumerator MultipleLerp (float speed, List<Vector3> positions) {
-		foreach (Vector3 position in positions) {
-			Vector3 startPos = transform.position;
-			float timer = 0f;
-			while (timer <= 1f) {
-				timer += Time.deltaTime * speed;
-				Vector3 newPosition = Vector3.Lerp (startPos, position, timer);
-				transform.position = newPosition;
-				yield return new WaitForEndOfFrame ();
-			}
-			transform.position = position;
-			startPos = position;
-		}
-		yield return false;
-	}
+//		yield return false;
+//	}
 		
 	// Update is called once per frame
 	void Update (){
 		if(Input.GetKeyDown("space")){
 			Debug.Log ("pressing space");
-			MultipleLerp (1, positions);
+//			MultipleLerp (1, positions);
 		}
 		
 	}
