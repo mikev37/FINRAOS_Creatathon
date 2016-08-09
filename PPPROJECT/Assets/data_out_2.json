@@ -1,4 +1,5 @@
-[
+{
+"datacenter_1":[
   {
     "id": "1",
     "object_type": "external_table",
@@ -1233,7 +1234,9 @@
     "partitions": "prcsg_dt",
     "storage_format": "org.apache.hadoop.mapred.TextInputFormat",
     "last_ddl": "1467409937"
-  },
+  }],
+"datacenter_2":
+[
   {
     "id": "96",
     "object_type": "external_table",
@@ -7772,7 +7775,9 @@
     "partitions": "begindate",
     "storage_format": "org.apache.hadoop.mapred.TextInputFormat",
     "last_ddl": "1467967188"
-  },
+  }],
+"datacenter_3":
+[
   {
     "id": "599",
     "object_type": "external_table",
@@ -12868,7 +12873,9 @@
     "partitions": "trade_dt",
     "storage_format": "org.apache.hadoop.hive.ql.io.orc.OrcInputFormat",
     "last_ddl": "1467952348"
-  },
+  }],
+"datacenter_4":
+[
   {
     "id": "991",
     "object_type": "external_table",
@@ -13102,7 +13109,9 @@
     "partitions": "trade_dt",
     "storage_format": "org.apache.hadoop.hive.ql.io.orc.OrcInputFormat",
     "last_ddl": "1467848617"
-  },
+  }],
+"datacenter_5":
+[
   {
     "id": "1009",
     "object_type": "external_table",
@@ -14339,3 +14348,4 @@
     "last_ddl": "1467325680"
   }
 ]
+}
