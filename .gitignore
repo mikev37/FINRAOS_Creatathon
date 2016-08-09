@@ -3,3 +3,5 @@ PPPROJECT/.vs/
 PPPROJECT/PPPROJECT.CSharp.csproj
 PPPROJECT/Temp/UnityTempFile-*
 PPPROJECT/Temp/
+*.meta
+PPPROJECT/ProjectSettings/ProjectSettings.asset
