@@ -5,3 +5,6 @@ PPPROJECT/Temp/UnityTempFile-*
 PPPROJECT/Temp/
 *.meta
 PPPROJECT/ProjectSettings/ProjectSettings.asset
+PPPROJECT/PPPROJECT.sln
+*.csproj
+*.asset
